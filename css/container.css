@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.container{
+    font-family: Lato;
+    font-weight: lighter;
+    background-color:#eee;
+    margin: 0px 10%;
+}
+.container__header{
+    font-weight: bold;
+    background-color: white;
+    padding: 10px 10px 10px 20px;
+    margin-top: 10px;
+    margin-bottom:2.1px ;
+}

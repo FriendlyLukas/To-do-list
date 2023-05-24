@@ -1,0 +1,27 @@
+.form{
+    background-color: white;
+    margin-top: 0;
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr auto;
+}
+@media (max-width: 768px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+.form__button{
+    
+    color: white;
+    background-color: teal;
+    padding: 8px;
+    border: 1px teal;
+    font-weight: bolder;
+    margin: 10px;
+
+}
+.form__newTask{
+    border-color: #eee;
+    border-radius: 2px;
+    margin: 10px;
+}
