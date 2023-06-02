@@ -29,6 +29,10 @@
         tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     }
+    const symboltaskDone = (taskIndex) => {
+        document.getElementsByClassName("js-done").innerHTML="✔";
+        render();
+    }
 
     bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -44,8 +48,10 @@
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
                 toggleTaskDone(index);
+                symboltaskDone(index);
             });
         });
+
     }
 
     const render = () => {
@@ -57,7 +63,7 @@
                 <li 
                 class="list__item ${task.done ? "list__item--done" : ""}"
                 >
-                    <button class="list__button js-done">✔</button>
+                    <button class="list__button js-done">${task.done ? "✔" : ""}</button>
                     <span class="list_taskContent">${task.content}</span>
                     <button class="list__button list__button--remove js-remove">🗑</button>
                     
