@@ -1,12 +1,7 @@
     
 {
     
-    const tasks = [
-        {
-            content: "Dodaj swoje pierwsze zadanie",
-            done: false,
-        }
-    ];
+    const tasks = [];
 
     const addNewTask = () =>{
         const newTaskInput = document.querySelector(".js-newTask");
@@ -81,20 +76,18 @@
 
             if (newTaskContent === "") {
                 return;
-            }
-            
+            }          
             addNewTask(newTaskContent);
-            
-
-            
         }
 
     const init = () => {
         render();
 
         const form = document.querySelector(".js-form");
+        const formSubmitButton =document.querySelector(".js-submitButton");
 
         form.addEventListener("submit", onFormSubmit);
+        formSubmitButton.addEventListener('click',addNewTask);
     };
 
     init();
