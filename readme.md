@@ -1,4 +1,4 @@
-# Currency Calculator
+# To do list
 
 It's simply application to help you organize your tasks to do. 
 
