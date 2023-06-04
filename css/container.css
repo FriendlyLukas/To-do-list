@@ -19,3 +19,6 @@ html {
     margin-top: 10px;
     margin-bottom:2.1px ;
 }
+.button{
+    cursor: pointer;
+}

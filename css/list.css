@@ -27,6 +27,7 @@
     margin: 10px 15px 10px 10px;
     text-decoration:none;
     align-items: center;
+    cursor: pointer;
     
 }
 .list__button--remove {
@@ -36,6 +37,7 @@
     margin: 10px 15px 10px 10px;
     align-items: center;
     text-decoration:none;
+    cursor: pointer;
     
 }
 .list__header{
