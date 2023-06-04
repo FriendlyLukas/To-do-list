@@ -84,10 +84,7 @@
         render();
 
         const form = document.querySelector(".js-form");
-        const formSubmitButton =document.querySelector(".js-submitButton");
-
         form.addEventListener("submit", onFormSubmit);
-        formSubmitButton.addEventListener('click',addNewTask);
     };
 
     init();
