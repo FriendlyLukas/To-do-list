@@ -11,7 +11,7 @@
     }
 }
 .form__button{
-    
+    cursor: pointer;
     color: white;
     background-color: teal;
     padding: 8px;
