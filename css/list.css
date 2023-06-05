@@ -4,13 +4,12 @@
     background-color: white;
     border: 1px black;
     list-style-type: none;
-    margin-top:0;
 }
 .list__item{
     display:grid;
     grid-template-columns: auto 1fr auto;
     padding: 7px;
-    margin-top: 20px;
+    grid-gap: 10px;
     border-bottom: 1px solid #ddd;
     align-items: center;
 }
@@ -25,7 +24,7 @@
     border-radius: 0px;
     background-color: green;
     border-style: none;
-    margin-right: 10px;
+    grid-gap:5px;
     text-decoration:none;
     align-items: center;
 }
@@ -38,7 +37,6 @@
     justify-self: end;
     background-color: red;
     color: aliceblue;
-    margin-left: 10px;
     align-items: center;
     text-decoration:none; 
 }
@@ -50,10 +48,9 @@
 .list__header{
     background-color: white;
     padding: 20px;
-    margin-top: 10px;
-    margin-bottom:1.5px;
+    grid-gap: 10px;
 }
 .list_taskContent{
-    margin-left: 0px;
+    grid-gap: 0px;
     padding-left: 0px;
 }
