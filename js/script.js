@@ -21,10 +21,6 @@
         tasks[taskIndex].done = !tasks[taskIndex].done;
         render();
     }
-    const symboltaskDone = (taskIndex) => {
-        document.getElementsByClassName("js-done").innerHTML="✔";
-        render();
-    }
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
