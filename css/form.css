@@ -1,6 +1,6 @@
 .form{
     background-color: white;
-    grid-gap: 0;
+    grid-gap: 10px;
     display: grid;
     padding: 20px;
     grid-template-columns: 1fr auto;
@@ -17,8 +17,6 @@
     padding: 8px;
     border: 1px teal;
     font-weight: bolder;
-    grid-gap: 10px;
-    margin-top: 10px;
 
 }
 .form__newTask{
