@@ -15,9 +15,15 @@
     color: white;
     background-color: teal;
     padding: 8px;
-    border: 1px teal;
+    border: none;
     font-weight: bolder;
+}
 
+.form__button:hover{
+    background-color: hsl(180, 100%, 35%);
+}
+.form__button:active{
+    background-color: hsl(180, 100%, 45%);
 }
 .form__newTask{
     border-color: #eee;
