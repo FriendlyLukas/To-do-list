@@ -5,19 +5,28 @@
     const addNewTask = () => {
         const newTaskInput = document.querySelector( ".js-newTask" );
         const newTaskText = newTaskInput.value.trim();
-        if (newTaskText !== "") tasks.push( { content:newTaskText, done:false, } );
+        const newTask = { content:newTaskText, done:false };
+        if (newTaskText !== "") tasks = [...tasks, newTask];
         newTaskInput.focus();
         newTaskInput.value="";
         render();
     }
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex,1);
+        const tasksWithRemovedItem = [
+            ...tasks.splice(taskIndex-1),
+            ...tasks.splice(taskIndex,1),
+            ...tasks.splice(taskIndex+1),
+        ];
         render();
     }
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        const tasksWithToggledTaskDone = [
+            ...tasks.splice(0,taskIndex),
+            {...tasks[taskIndex].done = !tasks[taskIndex].done},
+            ...tasks.splice(taskIndex + 1)
+        ];
         render();
     }
 
