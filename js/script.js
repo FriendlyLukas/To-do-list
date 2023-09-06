@@ -11,22 +11,15 @@
         newTaskInput.value="";
         render();
     }
-  
+    
     const removeTask = (taskIndex) => {
-        const tasksWithRemovedItem = [
-            ...tasks,
-            ...tasks.splice(taskIndex,1),
-            ...tasks.splice(taskIndex+1),
-        ];
+        const slicedItem = !tasks.slice(taskIndex,1);
+        const notRemovedTasks = tasks.filter(slicedItem); 
         render();
     }
 
-    const toggleTaskDone = (taskIndex) => {
-        const tasksWithToggledTaskDone = [
-            ...tasks,
-            {...tasks[taskIndex].done = !tasks[taskIndex].done},
-            ...tasks.splice(taskIndex + 1)
-        ];
+    const toggleTaskDone = () => {
+        tasks.toogle([taskIndex].done);
         render();
     }
 
@@ -38,12 +31,13 @@
             });
         });
 
-        const toggleDoneButtons = document.querySelectorAll(".js-done");
-            toggleDoneButtons.forEach( (toggleDoneButton, index) => {
-                toggleDoneButton.addEventListener("click", () => {
-                    toggleTaskDone(index); 
-                });
+    const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach( (toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index); 
             });
+        });
     }
 
     const render = () => {
