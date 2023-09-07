@@ -13,15 +13,27 @@
     }
     
     const removeTask = (taskIndex) => {
-        const slicedItem = !tasks.slice(taskIndex,1);
-        const notRemovedTasks = tasks.filter(slicedItem); 
+        tasks.filter((_,index) => index !== taskIndex);
         render();
     }
 
-    const toggleTaskDone = () => {
-        tasks.toogle([taskIndex].done);
+    const toggleTaskDone = (taskIndex) => {
+        if (tasks[taskIndex], done = true) {
+            tasks = [
+                ...tasks.slice(0, taskIndex),
+                { ...tasks[taskIndex], done: false},
+                ...tasks.slice(taskIndex + 1)
+                ] 
+            } else {
+                tasks = [
+                    ...tasks.slice(0, taskIndex),
+                    { ...tasks[taskIndex], done: done},
+                    ...tasks.slice(taskIndex + 1)
+                ] 
+            }
         render();
     }
+
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
