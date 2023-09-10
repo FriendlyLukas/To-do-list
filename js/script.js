@@ -18,20 +18,11 @@
     }
 
     const toggleTaskDone = (taskIndex) => {
-        
-        if ( tasks[taskIndex].done = true) {
             tasks = [
             ...tasks.slice(0,taskIndex),
-            { ...tasks.slice[taskIndex,1], done: false},
+            { ...tasks[taskIndex], done : !tasks[taskIndex].done},
             ...tasks.slice(taskIndex + 1)
             ]
-        } else {
-            tasks = [
-                ...tasks.slice(0,taskIndex),
-                { ...tasks.slice[taskIndex,1], done: true},
-                ...tasks.slice(taskIndex + 1)
-                ]
-        }
         render();
     }
     
@@ -51,7 +42,7 @@
             });
         });
     }
-
+    
     const render = () => {
         let htmlString ="";
         for (const task of tasks) {
