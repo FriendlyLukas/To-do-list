@@ -18,7 +18,7 @@
 .list__item--done .list__taskContent{
     text-decoration:line-through;
 }
-.list__button{
+.list__taskButton{
     color: aliceblue;
     width: 30px;
     height: 30px;
@@ -30,11 +30,11 @@
     align-items: center;
 }
 
-.list__button:active{
+.list__taskButton:active{
     border: 2px solid #000;
 }
 
-.list__button--remove {
+.list__taskButton--remove {
     justify-self: end;
     background-color: red;
     color: aliceblue;
@@ -42,18 +42,41 @@
     text-decoration:none; 
 }
 
-.list__button--remove:active{
+.list__taskButton--remove:active{
     border: 2px solid #000;
 }
 
 .list__header{
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     margin-top: 10px;
     margin-bottom: 0;
+    display: grid;
+    justify-content: flex-end;
+    grid-template-columns: 5fr 1.1fr 1.2fr;
+}
+
+@media (max-width:768px){
+    .list__header{
+        grid-template-columns: 2fr 1fr 1fr;
+    }
 }
 
 .list_taskContent{
     grid-gap: 0px;
     padding-left: 0px;
+}
+.list__manageButton{
+    cursor: pointer;
+    background-color:white;
+    padding: 10px 20px;
+    border: none;
+    font-size: large;
+    color:teal;
+}
+.list__text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
 }

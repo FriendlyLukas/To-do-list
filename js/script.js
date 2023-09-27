@@ -42,7 +42,6 @@
             });
         });
     }
-    document.querySelector(".js-tasks").innerHTML = htmlString;
     const tasksRender = () => {
             let htmlString ="";
         for (const task of tasks) {
@@ -62,18 +61,22 @@
                 </li>
             `;
         }
+    document.querySelector(".js-tasks").innerHTML = htmlString;
     }
-    document.querySelector(".js-buttons").innerHTML = htmlString2;
     const buttonsRender = () => {
         let htmlString2 ="";
             htmlString2 += `
+            <div class = list__text>
+            Lista zadań
+            </div>
             <button class = list__manageButton js-buttons>
             Ukryj ukończone
             </button>
             <button class = list__manageButton js-buttons>
-            "Ukończ wszystkie
+            Ukończ wszystkie
             </button>
-            `
+          `
+          document.querySelector(".js-buttons").innerHTML = htmlString2;  
         }
     
 

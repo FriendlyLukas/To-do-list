@@ -12,6 +12,7 @@ html {
     background-color:#eee;
     margin: 0px 10%;
     word-break: break-word;
+    font-size: large;
 }
 .container__header{
     font-weight: bold;
