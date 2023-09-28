@@ -47,8 +47,7 @@
         for (const task of tasks) {
             htmlString += `
                 <li 
-                class="list__item ${task.done ? "list__item--done" : ""}"
-                >
+                class="list__item ${task.done ? "list__item--done" : ""}">
                     <button class="list__taskButton js-done">
                     ${task.done ? "✔" : ""}
                     </button>
@@ -63,30 +62,64 @@
         }
     document.querySelector(".js-tasks").innerHTML = htmlString;
     }
+
+    const toggleShowHideButton = () => {
+        const showAllTasks = document.querySelector(".js-showAll");
+        if (tasks != []) {
+            showAllTasks .addEventListener("click", () => {
+                if (tasks = tasks.some((done) => done)) {
+                    tasks = tasks.filter((done) => done)
+                    hideDoneTasks = true;
+                } else {
+                    hideDoneTasks = false; 
+                }
+            })
+        } 
+        
+        
+    }
+
+
+    const markAllTasksDoneButton = () => {
+
+        if (tasks != []) {
+            markDoneAllTasks.addEventListener("click", () => {
+                tasks = tasks.map((done) = done);
+            })
+        } 
+        const markDoneAllTasks = document.querySelector(".js-markDoneAll");
+        buttonsRender();
+    }
+    
+    const bindButtonsEvents = () => {
+        toggleShowHideButton();
+        markAllTasksDoneButton();
+    }
+    
+    
+
     const buttonsRender = () => {
+        const allTasksDone = tasks.every(task => task.done === true);
         let htmlString2 ="";
             htmlString2 += `
-            <div class = list__text>
+            <div class = "list__text">
             Lista zadań
             </div>
-            <button class = list__manageButton js-buttons>
-            Ukryj ukończone
+            <button class = "list__manageButton js-showAll">
+            ${hideDoneTasks ? "Pokaż ukończone":"Ukryj ukończone"}
             </button>
-            <button class = list__manageButton js-buttons>
-            Ukończ wszystkie
+            <button class = "list__manageButton js-markDoneAll ${allTaskDone ? disabled : ""}">
+            "Ukończ wszystkie"
             </button>
           `
           document.querySelector(".js-buttons").innerHTML = htmlString2;  
-        }
-    
-
-    const bindButtonsEvents = () => {}
+    }
 
     const render = () => {
-        tasksRender();
-        buttonsRender();
         bindEvents();
+        tasksRender();
         bindButtonsEvents();
+        buttonsRender();
     };
 
     const onFormSubmit = (event) => {
