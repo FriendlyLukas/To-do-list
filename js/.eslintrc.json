@@ -1,0 +1,14 @@
+{
+  "plugins": ["spellcheck"],
+  "rules": {
+    "spellcheck/spell-checker": [
+      "error",
+      {
+        "comments": true,
+        "strings": true,
+        "identifiers": true,
+        "skipWords": ["word1", "word2"]
+      }
+    ]
+  }
+}
