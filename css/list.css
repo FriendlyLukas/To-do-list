@@ -53,12 +53,16 @@
   margin-bottom: 0;
   display: grid;
   justify-content: flex-end;
-  grid-template-columns: 5fr 1.1fr 1.2fr;
+  grid-template-columns: 4fr 1fr 1fr;
 }
 
 @media (max-width: 768px) {
   .list__header {
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: medium;
+  }
+  .list__manageButton {
+    font-size: small;
   }
 }
 
@@ -69,9 +73,8 @@
 .list__manageButton {
   cursor: pointer;
   background-color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
-  font-size: large;
   color: teal;
 }
 .list__text {
