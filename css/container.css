@@ -1,26 +1,28 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*, ::after, ::before {
-    box-sizing: inherit;
+*,
+::after,
+::before {
+  box-sizing: inherit;
 }
 
-.container{
-    font-family: Lato;
-    font-weight: lighter;
-    background-color:#eee;
-    margin: 0px 10%;
-    word-break: break-word;
-    font-size: large;
+.container {
+  font-family: Lato;
+  font-weight: lighter;
+  background-color: #eee;
+  margin: 0px 10%;
+  word-break: break-word;
+  font-size: large;
 }
-.container__header{
-    font-weight: bold;
-    background-color: white;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom:2.1px ;
+.container__header {
+  font-weight: bold;
+  background-color: white;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 2.1px;
 }
-.button{
-    cursor: pointer;
+.button {
+  cursor: pointer;
 }
