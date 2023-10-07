@@ -83,3 +83,7 @@
   align-items: center;
   margin-left: 10px;
 }
+.list__manageButton[disabled] {
+  color: #999;
+  cursor: not-allowed;
+}

@@ -102,18 +102,32 @@
             <button class = "list__manageButton js-showAll">
             ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
-            <button class = "list__manageButton js-markDoneAll ${
+            <button ${
               allTasksDone ? "disabled" : ""
-            }">
+            } class = "list__manageButton js-markDoneAll" >
             Ukończ wszystkie
             </button>
           `;
     document.querySelector(".js-buttons").innerHTML = htmlString2;
   };
 
+  const emptyRender = () => {
+    let htmlString3 = "";
+    htmlString3 += `
+    <div class = "list_text">
+    Lista zadań
+    </div>
+    `;
+    document.querySelector(".js-emptyRender").innerHTML = htmlString3;
+  };
+
   const render = () => {
     tasksRender();
-    buttonsRender();
+    if (tasks.length === 0) {
+      emptyRender();
+    } else {
+      buttonsRender();
+    }
     bindTasksEvents();
     bindButtonsEvents();
   };
