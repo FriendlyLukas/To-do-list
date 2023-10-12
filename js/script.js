@@ -72,6 +72,14 @@
     render();
   };
 
+  const toggleTextButton = () => {
+    const toggleTextButton = document.querySelector(".js-toggleTextButton");
+    toggleTextButton.addEventListener("click", function () {
+      const buttonText = hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone";
+      toggleTextButton.textContent = buttonText;
+    });
+  };
+
   const bindButtonsEvents = () => {
     const showAllTasks = document.querySelector(".js-showAll");
     if (showAllTasks) {
@@ -80,6 +88,7 @@
           filterDoneTasks();
           hideDoneTasks = true;
         } else {
+          toggleTextButton();
           hideDoneTasks = false;
         }
       });
@@ -99,12 +108,12 @@
             <div class = "list__text">
             Lista zadań
             </div>
-            <button class = "list__manageButton js-showAll">
-            ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
+            <button class = "list__manageButton js-showAll js-toggleTextButton">
+            Ukryj zakończone
             </button>
             <button ${
               allTasksDone ? "disabled" : ""
-            } class = "list__manageButton js-markDoneAll" >
+            } class = "list__manageButton js-markDoneAll">
             Ukończ wszystkie
             </button>
           `;

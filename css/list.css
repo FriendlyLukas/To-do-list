@@ -61,8 +61,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     font-size: medium;
   }
-  .list__manageButton {
-    font-size: small;
+}
+@media (max-width: 300px) {
+  .list__header {
+    font-size: x-small;
   }
 }
 
@@ -76,6 +78,9 @@
   padding: 5px 10px;
   border: none;
   color: teal;
+}
+.list__manageButton:hover {
+  color: hsl(180, 100%, 35%);
 }
 .list__text {
   display: flex;
