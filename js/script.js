@@ -1,6 +1,6 @@
 {
   let tasks = [];
-  let hideDoneTasks = false;
+  let hideDoneTasksParameter = false;
 
   const addNewTask = () => {
     const newTaskInput = document.querySelector(".js-newTask");
@@ -62,8 +62,24 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
   };
 
-  const filterDoneTasks = () => {
-    tasks = tasks.filter((done) => done);
+  const toggleHideShowButton = () => {
+    hideDoneTasksParameter = !hideDoneTasksParameter;
+  };
+
+  const ifSomeTaskDone = () => {
+    tasks.some(({ done }) => done);
+  };
+
+  const hideDoneTasks = () => {
+    tasks.forEach((task) => {
+      task.done.style.display = "none";
+    });
+    render();
+  };
+  const showDoneTasks = () => {
+    tasks.forEach((task) => {
+      task.done.style.display = "block";
+    });
     render();
   };
 
@@ -72,24 +88,16 @@
     render();
   };
 
-  const toggleTextButton = () => {
-    const toggleTextButton = document.querySelector(".js-toggleTextButton");
-    toggleTextButton.addEventListener("click", function () {
-      const buttonText = hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone";
-      toggleTextButton.textContent = buttonText;
-    });
-  };
-
   const bindButtonsEvents = () => {
-    const showAllTasks = document.querySelector(".js-showAll");
+    const hideShowTasks = document.querySelector(".js-hideShowTasks");
     if (showAllTasks) {
-      showAllTasks.addEventListener("click", () => {
-        if (tasks.some((done) => done)) {
-          filterDoneTasks();
-          hideDoneTasks = true;
-        } else {
-          toggleTextButton();
-          hideDoneTasks = false;
+      hideShowTasks.addEventListener("click", () => {
+        if (ifSomeTaskDone()) {
+          hideDoneTasks();
+          toggleHideShowButton();
+        } else if ((hideDoneTasksParameter = true)) {
+          showDoneTasks();
+          toggleHideShowButton();
         }
       });
     }
@@ -108,8 +116,8 @@
             <div class = "list__text">
             Lista zadań
             </div>
-            <button class = "list__manageButton js-showAll js-toggleTextButton">
-            Ukryj zakończone
+            <button class = "list__manageButton js-hideShowTasks">
+            ${hideDoneTasksParameter ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
             <button ${
               allTasksDone ? "disabled" : ""
