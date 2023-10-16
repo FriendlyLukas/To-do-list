@@ -57,19 +57,12 @@
   margin-top: 10px;
   margin-bottom: 0;
   display: grid;
-  justify-content: flex-end;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr;
 }
 
 @media (max-width: 768px) {
   .list__header {
-    grid-template-columns: 1fr 1fr 1fr;
-    font-size: medium;
-  }
-}
-@media (max-width: 300px) {
-  .list__header {
-    font-size: x-small;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -80,9 +73,10 @@
 .list__manageButton {
   cursor: pointer;
   background-color: white;
-  padding: 5px 10px;
+  padding: 10px;
   border: none;
   color: teal;
+  font-size: 70%;
 }
 .list__manageButton:hover {
   color: hsl(180, 100%, 35%);
