@@ -46,7 +46,9 @@
     for (const task of tasks) {
       htmlString += `
                 <li 
-                class="list__item ${task.done ? "list__item--done" : ""}">
+                class="list__item ${task.done ? "list__item--done" : ""} ${
+        task.done & hideDoneTasksParameter ? "list__item--hidden" : ""
+      }">
                     <button class="list__taskButton js-done">
                     ${task.done ? "✔" : ""}
                     </button>
@@ -62,43 +64,30 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
   };
 
-  const toggleHideShowButton = () => {
-    hideDoneTasksParameter = !hideDoneTasksParameter;
+  const markAllTasksDone = () => {
+    tasks = tasks.map((task) => ({ ...task, done: true }));
+    render();
   };
 
   const ifSomeTaskDone = () => {
     tasks.some(({ done }) => done);
   };
 
-  const hideDoneTasks = () => {
-    tasks.forEach((task) => {
-      task.done.style.display = "none";
-    });
-    render();
-  };
-  const showDoneTasks = () => {
-    tasks.forEach((task) => {
-      task.done.style.display = "block";
-    });
-    render();
-  };
-
-  const markAllTasksDone = () => {
-    tasks = tasks.map((task) => ({ ...task, done: true }));
-    render();
+  toggleHideDoneTasksParameter = () => {
+    if (hideDoneTasksParameter) {
+      hideDoneTasksParameter = false;
+      render();
+    } else {
+      hideDoneTasksParameter = true;
+      render();
+    }
   };
 
   const bindButtonsEvents = () => {
     const hideShowTasks = document.querySelector(".js-hideShowTasks");
-    if (showAllTasks) {
+    if (hideShowTasks) {
       hideShowTasks.addEventListener("click", () => {
-        if (ifSomeTaskDone()) {
-          hideDoneTasks();
-          toggleHideShowButton();
-        } else if ((hideDoneTasksParameter = true)) {
-          showDoneTasks();
-          toggleHideShowButton();
-        }
+        toggleHideDoneTasksParameter();
       });
     }
     const markDoneAll = document.querySelector(".js-markDoneAll");
