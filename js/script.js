@@ -81,15 +81,13 @@
   const bindButtonsEvents = () => {
     const hideShowTasks = document.querySelector(".js-hideShowTasks");
 
-    if (hideShowTasks) 
-    {
+    if (hideShowTasks) {
       hideShowTasks.addEventListener("click", toggleHideDoneTasksParameter);
     }
 
     const markDoneAll = document.querySelector(".js-markDoneAll");
 
-    if (markDoneAll) 
-    {
+    if (markDoneAll) {
       markDoneAll.addEventListener("click", markAllTasksDone);
     }
   };
