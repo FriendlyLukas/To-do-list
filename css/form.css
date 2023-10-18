@@ -38,3 +38,10 @@
   grid-gap: 10px;
   padding: 10px;
 }
+.form__header {
+  font-weight: bold;
+  background-color: white;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 2.1px;
+}

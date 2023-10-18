@@ -5,8 +5,13 @@
   const addNewTask = () => {
     const newTaskInput = document.querySelector(".js-newTask");
     const newTaskText = newTaskInput.value.trim();
-    let newTask = { content: newTaskText, done: false };
-    if (newTaskText !== "") tasks = [...tasks, newTask];
+
+    const newTaskContent = document.querySelector(".js-newTask").value.trim();
+
+    if (newTaskText !== "") {
+      tasks = [...tasks, { content: newTaskContent }];
+    }
+
     newTaskInput.focus();
     newTaskInput.value = "";
     render();
@@ -69,48 +74,37 @@
     render();
   };
 
-  const ifSomeTaskDone = () => {
-    tasks.some(({ done }) => done);
-  };
-
   toggleHideDoneTasksParameter = () => {
-    if (hideDoneTasksParameter) {
-      hideDoneTasksParameter = false;
-      render();
-    } else {
-      hideDoneTasksParameter = true;
-      render();
-    }
+    hideDoneTasksParameter = !hideDoneTasksParameter;
+    render();
   };
 
   const bindButtonsEvents = () => {
     const hideShowTasks = document.querySelector(".js-hideShowTasks");
+
     if (hideShowTasks) {
-      hideShowTasks.addEventListener("click", () => {
-        toggleHideDoneTasksParameter();
-      });
+      hideShowTasks.addEventListener("click", toggleHideDoneTasksParameter());
     }
+
     const markDoneAll = document.querySelector(".js-markDoneAll");
+
     if (markDoneAll) {
-      markDoneAll.addEventListener("click", () => {
-        markAllTasksDone();
-      });
+      markDoneAll.addEventListener("click", markAllTasksDone());
     }
   };
 
   const buttonsRender = () => {
     const allTasksDone = tasks.every((task) => task.done === true);
-    let htmlString2 = "";
-    htmlString2 += `
-            <div class = "list__text">
+    let htmlString = "";
+    htmlString += `
+            <div>
             Lista zadań
             </div>
             <button class = "list__manageButton js-hideShowTasks">
             ${hideDoneTasksParameter ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
-            <button ${
-              allTasksDone ? "disabled" : ""
-            } class = "list__manageButton js-markDoneAll">
+            <button ${allTasksDone ? "disabled" : ""}
+            class = "list__manageButton js-markDoneAll">
             Ukończ wszystkie
             </button>
           `;
@@ -118,8 +112,8 @@
   };
 
   const emptyRender = () => {
-    let htmlString3 = "";
-    htmlString3 += `
+    let htmlString = "";
+    htmlString += `
     <div class = "list_text">
     Lista zadań
     </div>
@@ -129,6 +123,7 @@
 
   const render = () => {
     tasksRender();
+
     if (tasks.length === 0) {
       emptyRender();
     } else {
@@ -141,6 +136,7 @@
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newTaskContent = document.querySelector(".js-newTask").value.trim();
+
     if (newTaskContent === "") {
       return;
     }

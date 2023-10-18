@@ -33,10 +33,15 @@
   grid-gap: 5px;
   text-decoration: none;
   align-items: center;
+  cursor: pointer;
 }
 
 .list__taskButton:active {
   border: 2px solid #000;
+}
+.list__taskButton:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 
 .list__taskButton--remove {
@@ -45,10 +50,15 @@
   color: aliceblue;
   align-items: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .list__taskButton--remove:active {
   border: 2px solid #000;
+}
+.list__taskButton--remove:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 
 .list__header {

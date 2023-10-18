@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do list</title>
     <script defer src="js/script.js"></script>
-    <link href="css/container.css" rel="stylesheet" />
+    <link href="css/body.css" rel="stylesheet" />
     <meta property="og:image" content="images/To-Do-List_image.jpg" />
     <link href="css/list.css" rel="stylesheet" />
     <link href="css/form.css" rel="stylesheet" />
@@ -24,10 +24,10 @@
     />
   </head>
 
-  <body class="container">
+  <body class="body">
     <section>
       <h1>Lista zadań</h1>
-      <h2 class="container__header">Dodaj nowe zadanie</h2>
+      <h2 class="form__header">Dodaj nowe zadanie</h2>
       <form class="form js-form">
         <input
           class="form__newTask js-newTask"
@@ -40,7 +40,7 @@
     </section>
 
     <section>
-      <h2 class="list__header js-buttons js-emptyRender"></h2>
+      <h2 class="list__header js-buttons js-emptyRender list__text"></h2>
       <ul class="list js-tasks"></ul>
     </section>
   </body>
