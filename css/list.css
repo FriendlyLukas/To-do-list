@@ -5,6 +5,7 @@
   border: 1px black;
   list-style-type: none;
   margin-top: 2px;
+  font-weight: 400;
 }
 .list__item {
   display: grid;
@@ -63,11 +64,11 @@
 
 .list__header {
   background-color: white;
-  padding: 10px;
+  padding: 20px 0px 20px 20px;
   margin-top: 10px;
   margin-bottom: 0;
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 4fr 1fr 1fr;
 }
 
 @media (max-width: 768px) {
@@ -83,7 +84,7 @@
 .list__manageButton {
   cursor: pointer;
   background-color: white;
-  padding: 10px;
+  padding: 0px;
   border: none;
   color: teal;
   font-size: 70%;
@@ -91,12 +92,7 @@
 .list__manageButton:hover {
   color: hsl(180, 100%, 35%);
 }
-.list__text {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 10px;
-}
+
 .list__manageButton[disabled] {
   color: #999;
   cursor: not-allowed;

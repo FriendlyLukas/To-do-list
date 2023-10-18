@@ -83,13 +83,13 @@
     const hideShowTasks = document.querySelector(".js-hideShowTasks");
 
     if (hideShowTasks) {
-      hideShowTasks.addEventListener("click", toggleHideDoneTasksParameter());
+      hideShowTasks.addEventListener("click", toggleHideDoneTasksParameter);
     }
 
     const markDoneAll = document.querySelector(".js-markDoneAll");
 
     if (markDoneAll) {
-      markDoneAll.addEventListener("click", markAllTasksDone());
+      markDoneAll.addEventListener("click", markAllTasksDone);
     }
   };
 
@@ -104,11 +104,11 @@
             ${hideDoneTasksParameter ? "Pokaż ukończone" : "Ukryj ukończone"}
             </button>
             <button ${allTasksDone ? "disabled" : ""}
-            class = "list__manageButton js-markDoneAll">
+             class = "list__manageButton js-markDoneAll">
             Ukończ wszystkie
             </button>
           `;
-    document.querySelector(".js-buttons").innerHTML = htmlString2;
+    document.querySelector(".js-buttons").innerHTML = htmlString;
   };
 
   const emptyRender = () => {
@@ -118,7 +118,7 @@
     Lista zadań
     </div>
     `;
-    document.querySelector(".js-emptyRender").innerHTML = htmlString3;
+    document.querySelector(".js-emptyRender").innerHTML = htmlString;
   };
 
   const render = () => {
