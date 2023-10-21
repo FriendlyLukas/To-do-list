@@ -75,9 +75,6 @@
   .list__header {
     grid-template-columns: 1fr;
   }
-  .list__manageButton {
-    padding: 20px;
-  }
 }
 
 .list_taskContent {
@@ -87,7 +84,7 @@
 .list__manageButton {
   cursor: pointer;
   background-color: white;
-  padding: 0px;
+  padding: 10px;
   border: none;
   color: teal;
   font-size: 70%;
