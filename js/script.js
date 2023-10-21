@@ -106,7 +106,7 @@
             class = "list__manageButton js-markDoneAll">
               Ukończ wszystkie
             </button>
-          `;
+          `; 
     document.querySelector(".js-buttons").innerHTML = htmlString;
   };
 
